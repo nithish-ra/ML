@@ -173,4 +173,3 @@ Random Forest
 
 Support Vector Machine (SVM)
 
-\
