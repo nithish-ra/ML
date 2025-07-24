@@ -49,14 +49,7 @@ The model's performance was evaluated on the validation set, yielding the follow
 
 The cross-validation results confirmed this performance, with an average R² score of **0.57**, indicating that the model generalizes well to unseen data.
 
-### Key Visualizations
 
-| Actual vs. Predicted Loan Amount | Feature Coefficients |
-| :------------------------------: | :------------------: |
-|  ![Actual vs Predicted Plot](https://i.imgur.com/r6wz0dF.png)   | ![Feature Coefficients Plot](https://i.imgur.com/8Q9Y1xN.png) |
-| *The model's predictions align closely with the actual values, showing a strong linear relationship.* | *`Loan Amount Request (USD)` is the most influential feature, followed by `Credit Score`.* |
-
----
 
 ## 🧠 Learning Outcomes
 
