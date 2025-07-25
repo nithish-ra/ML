@@ -4,7 +4,7 @@ This repository contains the code and results for an experiment on predicting lo
 
 **Author:** Nithish Ra (3122237001033)
 
-**View the Notebook:** [Google Colab](https://colab.research.google.com/drive/1n0g0KsdB0dNnbC9o3tz2XlrkPUwnK8-J)
+**View the Notebook:** [Google Colab](https://colab.research.google.com/drive/1fubijmJWxzd_BgUEAZPMuozJFIqy6hsJ#scrollTo=9JJ9PKFQYtut)
 
 ---
 
