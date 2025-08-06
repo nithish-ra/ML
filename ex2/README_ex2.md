@@ -1,44 +1,98 @@
-# Loan Amount Prediction using Linear Regression
+# 💰 Loan Sanction Amount Prediction
 
-This repository contains the code and results for an experiment on predicting loan sanction amounts using a Linear Regression model. The project is part of the Machine Learning Algorithms Laboratory curriculum.
+This machine learning project predicts loan sanction amounts based on customer and property details. It uses:
+- 🔹 **Linear Regression** for baseline comparison
+- 🔹 **Support Vector Regression (SVR)** with hyperparameter tuning
 
-**Author:** Nithish Ra (3122237001033)
-
-**View the Notebook:** [Google Colab](https://colab.research.google.com/drive/1fubijmJWxzd_BgUEAZPMuozJFIqy6hsJ)
-
----
-
-## 🎯 Objective
-
-The primary goal of this experiment is to build and evaluate a Linear Regression model to predict the loan amount sanctioned to a user based on various personal and financial features. The project also focuses on interpreting the model's results to understand the key factors influencing loan sanction decisions.
+> 📊 Dataset used: [Predict Loan Amount Dataset](https://www.kaggle.com/datasets/phileinsophos/predict-loan-amount-data) from Kaggle
 
 ---
 
-## ⚙️ Methodology
+## 🧾 Project Goals
 
-The project follows a standard machine learning pipeline:
-
-1.  **Data Loading & Preprocessing:**
-    * Irrelevant columns were dropped.
-    * Missing values were handled by filling numerical columns with the mean and categorical columns with the mode.
-    * Categorical features were converted to numerical format using `LabelEncoder`.
-
-2.  **Exploratory Data Analysis (EDA):**
-    * Visualizations such as histograms, scatter plots, and heatmaps were used to understand data distributions and feature relationships.
-    * Boxplots were used to identify outliers in key numerical features.
-
-3.  **Feature Engineering:**
-    * Outliers in features like `Income (USD)` and `Loan Amount Request (USD)` were treated by clipping values at the 1st and 99th percentiles to reduce their skewing effect on the model.
-
-4.  **Model Training & Evaluation:**
-    * The dataset was split into 80% for training and 20% for validation.
-    * Features were standardized using `StandardScaler`.
-    * A Linear Regression model was trained on the preprocessed data.
-    * The model's performance was evaluated using K-Fold Cross-Validation (K=5) to ensure robustness.
+- Understand relationships between features and sanctioned loan amounts.
+- Handle missing values, outliers, and categorical encoding.
+- Perform feature selection using Random Forest.
+- Train and compare two regression models:
+  - Linear Regression
+  - SVR with RBF, Polynomial, and Linear kernels (tuned via GridSearchCV)
 
 ---
 
-## 📊 Results Summary
+## 📦 Tech Stack
+
+- `Python 3`
+- `pandas`, `numpy`
+- `seaborn`, `matplotlib`
+- `scikit-learn` (regression models, scaling, CV, GridSearch)
+
+---
+
+## 📊 Workflow
+
+### 1. **Data Preprocessing**
+- Dropped irrelevant columns (`Customer ID`, `Name`, etc.)
+- Handled missing values:
+  - Numeric → Median
+  - Categorical → Mode
+- Encoded categoricals using `LabelEncoder`
+- Clipped outliers (1st–99th percentile)
+- Feature scaling via `StandardScaler`
+
+### 2. **Exploratory Data Analysis**
+- Boxplots for outliers
+- Correlation heatmaps
+- Distribution plots
+- Scatter plots for target vs top features
+
+### 3. **Feature Selection**
+- Used `RandomForestRegressor` to rank features
+- Top 10 features were selected for modeling
+
+### 4. **Modeling**
+
+#### 🔹 Linear Regression
+- Evaluated using:
+  - R² and Adjusted R²
+  - MAE, MSE, RMSE
+  - 5-Fold Cross-Validation
+- Visualized: Actual vs Predicted scatter plots
+
+#### 🔹 Support Vector Regression (SVR)
+- Pipeline with scaling + SVR
+- GridSearchCV over:
+  - Kernels: `rbf`, `poly`, `linear`
+  - `C`, `epsilon`, `gamma`, `degree`
+- Evaluated on:
+  - Validation set
+  - Cross-validation (R²)
+  - Test set performance
+- Visualized predictions
+
+---
+
+## 🔁 Model Comparison
+
+| Metric         | Linear Regression | SVR (Best Kernel) |
+|----------------|------------------:|------------------:|
+| Validation R²  | ~0.57             | ~0.16             |
+| CV R² (mean)   | ~0.55             | ~0.09             |
+| Test R²        | ~0.55             | ~0.15             |
+
+> ✅ **Linear Regression** performed better than SVR in this experiment.
+
+---
+
+## 📈 Visualizations
+- 📦 Boxplots (before/after outlier treatment)
+- 🔥 Correlation heatmap
+- 🔍 Predicted vs Actual scatter plots
+- 🧠 Feature importance bar chart
+
+---
+
+
+## 📊 Results Summary - LR
 
 The model's performance was evaluated on the validation set, yielding the following key metrics:
 
@@ -51,19 +105,3 @@ The cross-validation results confirmed this performance, with an average R² sco
 
 
 
-## 🧠 Learning Outcomes
-
-This experiment provided hands-on experience in:
-* Implementing a complete regression pipeline, from data cleaning to model evaluation.
-* Applying feature engineering techniques like outlier treatment.
-* Understanding the importance of cross-validation for robust model assessment.
-* Interpreting model coefficients to understand feature importance and their impact on predictions.
-
----
-
-## 🛠️ Libraries & Tools
-
-* **Data Handling:** Pandas, NumPy
-* **Machine Learning:** Scikit-learn
-* **Visualization:** Matplotlib, Seaborn
-* **Environment:** Google Colab
