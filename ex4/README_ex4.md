@@ -65,11 +65,8 @@ Hyperparameters tuned include number of estimators, maximum depth, feature selec
 
 Combines predictions from multiple base learners (SVM, Naïve Bayes, Decision Tree, KNN).
 
-# Final prediction made by a meta-model (Logistic Regression or Random Forest).
 
-Explores the benefit of combining heterogeneous models compared to homogeneous ensembles.
-
-Evaluation Approach
+# Evaluation Approach
 
 # Models are compared using:
 
