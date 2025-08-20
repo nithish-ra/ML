@@ -1,8 +1,8 @@
-Ensemble Techniques for Breast Cancer Classification
+# Ensemble Techniques for Breast Cancer Classification
 
 This project focuses on applying and comparing multiple ensemble learning techniques for the classification of breast cancer tumors (Benign vs. Malignant). The dataset used is the Wisconsin Diagnostic Breast Cancer dataset, which contains 30 real-valued features extracted from digitized images of fine needle aspirates of breast masses.
 
-Objective
+# Objective
 
 The primary aim is to demonstrate how ensemble methods improve predictive performance compared to single learners. The study includes:
 
@@ -22,8 +22,8 @@ Data is split into training (80%) and test (20%) sets, maintaining class balance
 
 Exploratory analysis includes class balance visualization and correlation heatmaps for feature interdependence.
 
-Models and Their Roles
-Decision Tree
+# Models and Their Roles
+## Decision Tree
 
 Serves as the baseline model.
 
@@ -31,7 +31,7 @@ Hyperparameters (criterion, depth, minimum samples per split/leaf) tuned via Gri
 
 Offers interpretability but suffers from high variance when used alone.
 
-AdaBoost
+## AdaBoost
 
 Combines multiple weak learners (shallow decision trees) sequentially.
 
@@ -39,13 +39,13 @@ Later learners focus on misclassified instances from previous rounds.
 
 Hyperparameters tuned include number of estimators and learning rate.
 
-Gradient Boosting
+## Gradient Boosting
 
 Builds trees sequentially, but unlike AdaBoost, it optimizes residual errors through gradient descent.
 
 Hyperparameters tuned include number of estimators, learning rate, depth, and subsampling ratio.
 
-XGBoost
+## XGBoost
 
 An optimized gradient boosting framework designed for speed and regularization.
 
@@ -53,7 +53,7 @@ Adds regularization (L1 and L2) to control overfitting.
 
 Hyperparameters tuned include depth, learning rate, number of trees, gamma, subsample ratio, and column sampling.
 
-Random Forest
+## Random Forest
 
 Ensemble of decision trees trained on bootstrapped samples with feature bagging.
 
@@ -61,17 +61,17 @@ Reduces variance and improves generalization.
 
 Hyperparameters tuned include number of estimators, maximum depth, feature selection strategy, and splitting rules.
 
-Stacking Classifier
+## Stacking Classifier
 
 Combines predictions from multiple base learners (SVM, Naïve Bayes, Decision Tree, KNN).
 
-Final prediction made by a meta-model (Logistic Regression or Random Forest).
+# Final prediction made by a meta-model (Logistic Regression or Random Forest).
 
 Explores the benefit of combining heterogeneous models compared to homogeneous ensembles.
 
 Evaluation Approach
 
-Models are compared using:
+# Models are compared using:
 
 Accuracy and F1 score on the test set.
 
@@ -81,7 +81,7 @@ ROC-AUC for overall discriminatory ability.
 
 5-Fold Cross-Validation to assess robustness and generalizability.
 
-Key Insights
+# Key Insights
 
 Decision Tree provides a simple benchmark but is prone to overfitting.
 
